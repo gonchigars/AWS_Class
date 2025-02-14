@@ -22,6 +22,9 @@ def create_bucket(bucket_name):
         raise ValueError("AWS_REGION must be set in your .env file.")
 
     try:
+        # DEBUG: Print the AWS Access Key being used.
+        print(f"DEBUG - Using AWS_ACCESS_KEY: {AWS_ACCESS_KEY}")
+
         # For the us-east-1 region, AWS S3 has special requirements:
         # - Do not specify the region_name in the boto3 client.
         # - Do not use CreateBucketConfiguration.
